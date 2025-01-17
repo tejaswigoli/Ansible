@@ -7,6 +7,6 @@
      name: ngnix
      state: present
   - name: starting ngnix
-    ansible.builtin.service
+    ansible.builtin.service:
       name: ngnix
       state: started   
