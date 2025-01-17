@@ -1,5 +1,5 @@
 - name: PING
   hosts: backend
-  tasks: #task=module
- - name: ping server
-   ansible.builtin.plugin:
+  tasks: # task=module
+  - name: ping server
+    ansible.builtin.plugin:
