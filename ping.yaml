@@ -2,4 +2,4 @@
   hosts: backend
   tasks: # tasks=module=collection
   - name: ping server
-    ansible.builtin.plugin:
+    ansible.builtin.ping:
