@@ -2,14 +2,14 @@
   hosts: backend
   become: yes
   tasks:
-  - name: install ngnix
+  - name: install ngnix if Redhat
     ansible.builtin.dnf:
      name: ngnix
      state: installed
-    when: ansible_os_family == "Redhat"
+    when: ansible_os_family == "RedHat"
 
   - name: Install ngnix if ubuntu
     ansible.builtin.dnf:
      name: ngnix
      state: installed
-    when: ansible_os_family == "Debian"
+    when: ansible_os_family == "ubuntu"
