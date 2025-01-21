@@ -4,9 +4,9 @@
   vars_prompt:
   - name: COURSE
     prompt: Please enter course name
-  - name : DURATION
+  - name: DURATION
     prompt: Please enter Duration
-  - name : TRAINER
+  - name: TRAINER
     prompt: Please enter Trainer name
   tasks:
   ansible.builtin.debug:
