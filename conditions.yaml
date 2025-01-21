@@ -4,12 +4,12 @@
   tasks:
   - name: install ngnix if Redhat
     ansible.builtin.dnf:
-     name: ngnix
+     name: nginx
      state: installed
     when: ansible_os_family == "RedHat"
 
   - name: Install ngnix if ubuntu
     ansible.builtin.dnf:
-     name: ngnix
+     name: nginx
      state: installed
     when: ansible_os_family == "ubuntu"
