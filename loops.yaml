@@ -5,7 +5,7 @@
     ansible.builtin.package:
      name: "{{ item }}"
      state: installed
- - name: start service
+  - name: start service
     ansible.builtin.service:
      name: "{{ item }}"
      state: present
