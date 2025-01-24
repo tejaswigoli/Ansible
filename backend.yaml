@@ -1,0 +1,15 @@
+- name: configure backend server
+  hosts: backend
+  become: yes
+  tasks:
+  - name: disable current nodejs
+    command:
+     dnf module disable nodejs -y
+  - name: Enable nodejs 20
+    command:
+     dnf module enable nodejs:20 -y
+
+  - name: install nodejs
+    package:
+     name: nodejs
+     state: present
