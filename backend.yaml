@@ -13,3 +13,22 @@
     package:
      name: nodejs
      state: present
+
+  - name: create user   
+    user:
+     name: expense
+
+  - name: create app dir
+    file:
+     path: /app
+     state: directory
+
+  - name: download backend code
+    get_url:
+     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+     dest: /tmp/backend.zip
+
+  - name: unzip backend code
+    unarchive:
+     src: /tmp/backend.zip
+     dest: /app
