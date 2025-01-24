@@ -13,9 +13,13 @@
      state: started
      enabled: yes
 
-  - name: Mysql server creds
+  - name: connect to mysql server
     community.mysql.mysql_info:
      login_user: root
      login_password: ExpenseApp@1
      login_host: 172.31.24.87
-     
+    register: mysql_info
+
+  - name: print the output
+    - debug:
+      msg: "Mysql info: {{ mysql_info }}"
