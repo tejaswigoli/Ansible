@@ -6,4 +6,9 @@
     dnf:
      name: mysql-server
      state: installed
+    
+  - name: Start and enable mysql service
+    service:
+     name: mysqld
+     state: started
      enabled: yes
