@@ -1,5 +1,5 @@
 - name: configure backend server
-  hosts: backend
+  hosts: applicationserver
   become: yes
   tasks:
   - name: disable current nodejs
