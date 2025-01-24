@@ -4,5 +4,5 @@
   tasks:
   - name: install mysql
     dnf:
-    name: mysql
-    state: installed
+     name: mysql-server
+     state: installed
