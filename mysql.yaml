@@ -1,8 +1,8 @@
-- name: install mysql
+- name: configure mysql server
   hosts: backend
   become: yes
   tasks:
-  - name: install mysql server
+  - name: Install MYSQL server
     dnf:
-     name: mysql-server
-     state: installed
+      name: mysql-server
+      state: installed
