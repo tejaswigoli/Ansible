@@ -62,3 +62,10 @@
      login_password: ExpenseApp@1
      login_host: 172.31.24.87
      target: /app/schema/backend.sql
+
+  - name: daemon reload and restart service
+    service:
+      enabled: true
+      state: restarted
+      daemon_reload: true
+      name: backend
