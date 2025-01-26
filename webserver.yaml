@@ -9,6 +9,6 @@
 
   - name: enable and start ngnix
     service:
-     name: ngnix
+     name: nginx
      state: started
      enabled: yes
