@@ -1,0 +1,14 @@
+- name: configure webserver
+  hosts: webserver
+  become: yes
+  tasks:
+  - name: install nginx
+    dnf:
+     name: nginx
+     state: installed
+
+  - name: enable and start ngnix
+    service:
+     name: ngnix
+     state: started
+     enabled: yes
