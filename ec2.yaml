@@ -27,4 +27,14 @@
      image_id: "{{ ami_id }}"
      instance_type: "{{ instance_type }}"
     loop: "{{ instances }}"
+    register: ec2_info
+
+  - name: print ec2_info
+    debug:
+     msg: "{{ ec2_info }}"
+
+  - name: print private IPs
+    debug:
+     msg: "{{ item.item }}: {{ item.instances[0].private_ip_address }}"
+    loop: "{{ ec2_info.results }}"
     
