@@ -36,5 +36,6 @@
   - name: print private IPs
     debug:
      msg: "{{ item.instances[0].private_ip_address }}"
+    with_items: "{{ lookup('ec2', 'instance-id') }}" 
     loop: "{{ ec2_info.results }}"
     
