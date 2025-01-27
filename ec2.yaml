@@ -1,0 +1,22 @@
+- name: create ec2 instances with ansible
+  connection: local
+  hosts: local
+  vars:
+   subnet_id: subnet-0925106997d289910
+   sg_id: sg-067656dda6fd96e4d
+   ami_id: ami-09c813fb71547fc4f
+   instance_type: t2.micro
+   instances:
+   - mysql
+   - application
+   - webserver
+  tasks:
+  - name: create ec2 instances
+    amazon.aws.ec2_instance:
+     name: "{{ item }}"
+     subnet_id: "{{ subnet_id: }}"
+     security_group: "{{ sg_id }}"
+     image_id: "{{ ami_id }}"
+     instance_type: "{{ instance_type }}"
+    loop: "{{ instances }}"
+    
