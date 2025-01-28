@@ -1,2 +1,4 @@
 - hosts: local
   become: true
+  roles:
+   - httpd
